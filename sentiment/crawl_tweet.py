@@ -4,11 +4,12 @@ from tweepy import OAuthHandler
 import re
 from nltk.tokenize import WordPunctTokenizer
 from bs4 import BeautifulSoup
+from django.conf import settings
 
-consumer_key = '6Gwwknkbcqpjf5hy24EFMXX86'
-consumer_secret = 'qr9lclcVxblp1EFA764aAa42fcpMBfVjeVFaBZczPpB2oYbluL'
-access_token = '95407526-quHDArsfgilKjoQDnqV5O5Lcn4eDAiwMhbUD2To6K'
-access_secret = 'dYWl2QOmIHzssG169UosqczEw9uQOLQy5hY8AmQ4ggvEs'
+consumer_key = settings.CONSUMER_KEY
+consumer_secret = settings.CONSUMER_SECRET
+access_token = settings.ACCESS_TOKEN
+access_secret = settings.ACCESS_SECRET
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
 # load the twitter API via tweepy
