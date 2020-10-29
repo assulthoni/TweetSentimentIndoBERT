@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+</hr>
+<h2>QUERY : {{query}}</h2>
+<h3>RESULT :</h3>
+<p>{{ status }}</p>
+</hr>
+<div>
+<table class="table table-dark">
+<thead>
+    <tr >
+        <th style="width:10%" scope='col'>#</th>
+        <th style="width:55%" scope='col'>Cleaned Tweet</th>
+        <th style="width:15%" scope='col'>Label</th>
+        <th style="width:20%" scope='col'>Confidence Level</th>
+    </tr>
+    </thead>
+    {% for i in sentiment %}
+    <tr>
+        <th scope="row" style="width:10%">{{ forloop.counter }}</th>
+        <td  style="width:55%">{{i.tweet}}</td>
+        <td  style="width:15%">{{i.label}}</td>
+        <td  style="width:20%">{{i.conf}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div>
+<a href={% url 'home' %} type="button" class="btn btn-secondary btn-lg btn-block">
+Back To Query Input
+</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div class="d-flex justify-content-center h-100">
+    <div class="search"> 
+    <form action='/crawl' method="POST">
+    {% csrf_token %}
+    <input type="text" class="search-input" placeholder="search..." name="query">
+    <button type='submit' class="search-icon"> <i class="fa fa-search"></i> 
+    </button>
+    </form>
+    </div>
+</div>
+{% endblock %}
